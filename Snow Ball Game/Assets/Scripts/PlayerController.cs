@@ -34,7 +34,8 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector2 moveVec = new Vector2 (CrossPlatformInputManager.GetAxis ("Horizontal"), CrossPlatformInputManager.GetAxis ("Vertical"));
-		bool isJumping = CrossPlatformInputManager.GetButton ("Jump");
+		bool isJumping = CrossPlatformInputManager.GetButtonDown ("Jump");
+		bool isFire = CrossPlatformInputManager.GetButtonDown ("Fire");
 		isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatIsGround);
 
 		if (Input.GetKey(left)||moveVec.x<0)
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
 		}
-		if (Input.GetKeyDown(throwBall)){
+		if (Input.GetKeyDown(throwBall)||isFire){
 			GameObject ballClone = (GameObject) Instantiate(snowBall,throwPoint.position,throwPoint.rotation);
 			ballClone.transform.localScale = transform.localScale;
 			anim.SetTrigger("Throw");
