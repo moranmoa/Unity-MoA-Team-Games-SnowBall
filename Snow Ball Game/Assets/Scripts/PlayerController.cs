@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour {
 
@@ -21,6 +22,9 @@ public class PlayerController : MonoBehaviour {
 
 	private Animator anim;
 
+	public GameObject snowBall;
+	public Transform throwPoint;
+
 	// Use this for initialization
 	void Start () {
 		theRB = GetComponent<Rigidbody2D>();
@@ -29,23 +33,30 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		Vector2 moveVec = new Vector2 (CrossPlatformInputManager.GetAxis ("Horizontal"), CrossPlatformInputManager.GetAxis ("Vertical"));
+		bool isJumping = CrossPlatformInputManager.GetButton ("Jump");
 		isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatIsGround);
 
-		if (Input.GetKey(left))
+		if (Input.GetKey(left)||moveVec.x<0)
 		{
 			theRB.velocity = new Vector2(-moveSpeed, theRB.velocity.y);
-		}else if (Input.GetKey(right))
+		}else if (Input.GetKey(right)||moveVec.x>0)
 		{
 			theRB.velocity = new Vector2(moveSpeed, theRB.velocity.y);
 		}else
 		{
 			theRB.velocity = new Vector2(0, theRB.velocity.y);
 		}
-		if (Input.GetKeyDown(jump) && isGrounded)
+		if ((Input.GetKeyDown(jump)||isJumping) && isGrounded)
 		{
 			theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
 		}
+		if (Input.GetKeyDown(throwBall)){
+			GameObject ballClone = (GameObject) Instantiate(snowBall,throwPoint.position,throwPoint.rotation);
+			ballClone.transform.localScale = transform.localScale;
+			anim.SetTrigger("Throw");
+		}
+
 		if (theRB.velocity.x < 0) 
 		{
 			transform.localScale = new Vector3(-1,1,1);
