@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
+
 public class PlayerController : MonoBehaviour {
 
 	public float moveSpeed;
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour {
 
 	public GameObject snowBall;
 	public Transform throwPoint;
+
+	public AudioSource throwSound;
 
 	// Use this for initialization
 	void Start () {
@@ -56,6 +59,8 @@ public class PlayerController : MonoBehaviour {
 			GameObject ballClone = (GameObject) Instantiate(snowBall,throwPoint.position,throwPoint.rotation);
 			ballClone.transform.localScale = transform.localScale;
 			anim.SetTrigger("Throw");
+
+			throwSound.Play ();
 		}
 
 		if (theRB.velocity.x < 0) 

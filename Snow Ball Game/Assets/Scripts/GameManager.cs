@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class GameManager : MonoBehaviour {
 
@@ -11,9 +13,13 @@ public class GameManager : MonoBehaviour {
 	public int p2Life;
 
 	public GameObject gameOver;
-
+	public GameObject canvas2gameoverreload;
 	public GameObject[] p1Sticks;
 	public GameObject[] p2Sticks;
+
+	public AudioSource hurtSound;
+
+	public string mainManu;
 
 	// Use this for initialization
 	void Start () {
@@ -25,13 +31,25 @@ public class GameManager : MonoBehaviour {
 		if (p1Life <= 0) {
 			player1.SetActive (false);
 			gameOver.SetActive (true);
+			canvas2gameoverreload.SetActive (true);
 		}
 
 		if (p2Life <= 0) {
 			player2.SetActive (false);
 			gameOver.SetActive (true);
+			canvas2gameoverreload.SetActive (true);
 			//gameOver.GetComponent<image>
 		}
+		//bool isReload = CrossPlatformInputManager.GetButtonDown ("Reload");
+		if( Input.GetKeyDown(KeyCode.R)){
+			Reload ();//SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+		}
+		if( Input.GetKeyDown(KeyCode.Escape)){
+			SceneManager.LoadScene (mainManu);
+		}
+
+
+
 	}
 
 	public void HurtP1(){
@@ -43,6 +61,8 @@ public class GameManager : MonoBehaviour {
 				p1Sticks [i].SetActive (false);
 			}
 		}
+
+		hurtSound.Play ();
 	}
 
 	public void HurtP2(){
@@ -54,5 +74,9 @@ public class GameManager : MonoBehaviour {
 				p2Sticks [i].SetActive (false);
 			}
 		}
+		hurtSound.Play ();
+	}
+	public void Reload(){
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
 }
