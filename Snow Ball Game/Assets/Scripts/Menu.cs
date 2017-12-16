@@ -6,24 +6,30 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class Menu : MonoBehaviour {
 
-	public string mainGameScene;
-	public void StartGame () {
-		SceneManager.LoadScene (mainGameScene);
+	public string livel1Game;
+	public string livel2Game;
+
+	public void Startlivel1() {
+		SceneManager.LoadScene (livel1Game);
+	}
+	public void Startlivel2()
+	{
+		SceneManager.LoadScene (livel2Game);
 	}
 
-	void QuitGame () {
+	public void QuitGame () {
 		Application.Quit();
 	}
 
-	void Update () {
-		bool isStart = CrossPlatformInputManager.GetButtonDown ("Start");
-		bool isQuit = CrossPlatformInputManager.GetButtonDown ("Quit");
-		if(isStart){
-			StartGame ();
-		}
-		if(isQuit){
-			QuitGame ();
-		}
+	//void Update () {
+	//	bool isStart = CrossPlatformInputManager.GetButtonDown ("Start");
+	//	bool isQuit = CrossPlatformInputManager.GetButtonDown ("Quit");
+	//	if(isStart){
+	//		StartGame ();
+	//	}
+	//	if(isQuit){
+	//		QuitGame ();
+	//	}
 		
-	}
+	//}
 }
