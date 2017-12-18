@@ -1,0 +1,138 @@
+Initialize engine version: 5.6.3p2 (b3d7a6428558)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   23.21.13.8813
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.022 seconds
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 4480x1080 at -1280,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.832444 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 302c -> priority: 1 
+  Thread -> id: 2e7c -> priority: 1 
+  Thread -> id: 2210 -> priority: 1 
+  Thread -> id: 373c -> priority: 1 
+Initialize engine version: 5.6.3p2 (b3d7a6428558)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   23.21.13.8813
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.018 seconds
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Moran\Documents\GitHub\Unity-MoA-Team-Games-SnowBall\Snow Ball Game Network\snow network_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 4480x1080 at -1280,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.968364 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 340c -> priority: 1 
+  Thread -> id: 1d10 -> priority: 1 
+  Thread -> id: 4314 -> priority: 1 
+  Thread -> id: 243c -> priority: 1 
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SnowBall.OnTriggerEnter2D (UnityEngine.Collider2D other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SnowBall.OnTriggerEnter2D (UnityEngine.Collider2D other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SnowBall.OnTriggerEnter2D (UnityEngine.Collider2D other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SnowBall.OnTriggerEnter2D (UnityEngine.Collider2D other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777} time {57091}, last rec time {55089} rtt {3} timeout {2000}
+ClientDisconnected due to error: Timeout
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
