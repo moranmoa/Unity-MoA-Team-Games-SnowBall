@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 58233782359941204}
   - component: {fileID: 50457062699567256}
   - component: {fileID: 114273668602242342}
-  - component: {fileID: 114139901300475298}
-  - component: {fileID: 114109747281559170}
+  - component: {fileID: 114794741387303384}
+  - component: {fileID: 114930729315860886}
   m_Layer: 0
   m_Name: Snow Ball
   m_TagString: Untagged
@@ -80,7 +80,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.16
---- !u!114 &114109747281559170
+--- !u!114 &114273668602242342
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -88,10 +88,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1257486635139304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76d96aa723de22c4ebc0b7deeba49960, type: 3}
+  m_Script: {fileID: 11500000, guid: 8dfbe6bed3d81de4189073a89d681822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114139901300475298
+  ballSpeed: 15
+  snowBallEffect: {fileID: 1204159944141826, guid: bc90341cc4e102649bd81bfcada00f6b,
+    type: 2}
+--- !u!114 &114794741387303384
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -123,7 +126,7 @@ MonoBehaviour:
     i15: 137
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &114273668602242342
+--- !u!114 &114930729315860886
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -131,12 +134,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1257486635139304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dfbe6bed3d81de4189073a89d681822, type: 3}
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballSpeed: 15
-  snowBallEffect: {fileID: 1204159944141826, guid: bc90341cc4e102649bd81bfcada00f6b,
-    type: 2}
+  m_TransformSyncMode: 2
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 3
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!212 &212533162932173638
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.Networking;
 
-
-public class PlayerController : MonoBehaviour {
+public class PlayerController : NetworkBehaviour {
 
 	public float moveSpeed;
 	public float jumpForce;
@@ -30,12 +30,16 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if (!isLocalPlayer)
+			return;
 		theRB = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (!isLocalPlayer)
+			return;
 		Vector2 moveVec = new Vector2 (CrossPlatformInputManager.GetAxis ("Horizontal"), CrossPlatformInputManager.GetAxis ("Vertical"));
 		bool isJumping = CrossPlatformInputManager.GetButtonDown ("Jump");
 		bool isFire = CrossPlatformInputManager.GetButtonDown ("Fire");
@@ -56,12 +60,14 @@ public class PlayerController : MonoBehaviour {
 			theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
 		}
 		if (Input.GetKeyDown(throwBall)||isFire){
-			GameObject ballClone = (GameObject) Instantiate(snowBall,throwPoint.position,throwPoint.rotation);
-			ballClone.transform.localScale = transform.localScale;
-			anim.SetTrigger("Throw");
-			throwSound.Play ();
-		}
+			//GameObject ballClone = (GameObject) 
+			CmdSnowBall();
+				//Network.Instantiate(snowBall,throwPoint.position,throwPoint.rotation,0);
+			//ballClone.transform.localScale = transform.localScale;
 
+			anim.SetTrigger("Throw");
+			//throwSound.Play ();
+		}
 		if (theRB.velocity.x < 0) 
 		{
 			transform.localScale = new Vector3(-1,1,1);
@@ -74,5 +80,12 @@ public class PlayerController : MonoBehaviour {
 		anim.SetBool ("Grounded", isGrounded);
 
 
+	}
+	[Command]
+	void CmdSnowBall()
+	{
+		GameObject ballClone = Instantiate(snowBall,throwPoint.position,throwPoint.rotation) as GameObject;
+		ballClone.transform.localScale = transform.localScale;
+		NetworkServer.Spawn (ballClone);
 	}
 }

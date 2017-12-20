@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 114417640582192140}
   - component: {fileID: 95029947005905402}
   - component: {fileID: 114102054722148920}
-  - component: {fileID: 114105495988549646}
-  - component: {fileID: 114057968041760500}
+  - component: {fileID: 114592455864239206}
+  - component: {fileID: 114938721811776152}
   m_Layer: 8
   m_Name: Player 1 Network
   m_TagString: Player1
@@ -251,17 +251,6 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
---- !u!114 &114057968041760500
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1795654312516202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76d96aa723de22c4ebc0b7deeba49960, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114102054722148920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,7 +283,52 @@ MonoBehaviour:
     i15: 54
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114105495988549646
+--- !u!114 &114417640582192140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1795654312516202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709b3d8ab6a4e91439f2e49ee0279214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  jumpForce: 20
+  left: 97
+  right: 100
+  jump: 119
+  throwBall: 9
+  groundCheckPoint: {fileID: 4488852388364006}
+  groundCheckRadius: 0.2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 1
+  isGrounded: 0
+  snowBall: {fileID: 1257486635139304, guid: 3946c1dd8418ccd489b63f01e939b589, type: 2}
+  throwPoint: {fileID: 4605161732884104}
+  throwSound: {fileID: 0}
+--- !u!114 &114592455864239206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1795654312516202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 95029947005905402}
+  m_ParameterSendBits: 4
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
+--- !u!114 &114938721811776152
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -315,32 +349,6 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
---- !u!114 &114417640582192140
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1795654312516202}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 709b3d8ab6a4e91439f2e49ee0279214, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpForce: 20
-  left: 97
-  right: 100
-  jump: 119
-  throwBall: 9
-  groundCheckPoint: {fileID: 4488852388364006}
-  groundCheckRadius: 0.2
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 1
-  isGrounded: 0
-  snowBall: {fileID: 1257486635139304, guid: 3946c1dd8418ccd489b63f01e939b589, type: 2}
-  throwPoint: {fileID: 4605161732884104}
-  throwSound: {fileID: 0}
 --- !u!212 &212820943143531268
 SpriteRenderer:
   m_ObjectHideFlags: 1
