@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709b3d8ab6a4e91439f2e49ee0279214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scale: {x: 0, y: 0, z: 0}
   moveSpeed: 10
   jumpForce: 20
   left: 97
@@ -321,7 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 95029947005905402}
-  m_ParameterSendBits: 4
+  m_ParameterSendBits: 0
   param0: 
   param1: 
   param2: 
@@ -340,7 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 2
-  m_SendInterval: 0.1
+  m_SendInterval: 0.0625
   m_SyncRotationAxis: 3
   m_RotationSyncCompression: 0
   m_SyncSpin: 0

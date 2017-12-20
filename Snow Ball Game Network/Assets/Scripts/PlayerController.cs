@@ -5,6 +5,8 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
 
 public class PlayerController : NetworkBehaviour {
+	[SyncVar]
+	public Vector3 scale;
 
 	public float moveSpeed;
 	public float jumpForce;
@@ -19,6 +21,7 @@ public class PlayerController : NetworkBehaviour {
 	public LayerMask whatIsGround;
 	public bool isGrounded;
 
+
 	private Rigidbody2D theRB;
 
 	private Animator anim;
@@ -30,10 +33,9 @@ public class PlayerController : NetworkBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (!isLocalPlayer)
-			return;
 		theRB = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator> ();
+		scale = new Vector3 (1, 1, 1);
 	}
 	
 	// Update is called once per frame
@@ -70,11 +72,13 @@ public class PlayerController : NetworkBehaviour {
 		}
 		if (theRB.velocity.x < 0) 
 		{
-			transform.localScale = new Vector3(-1,1,1);
+			scale = new Vector3(-1,1,1);
+			CmdflipScale ();
 		}
 		else if(theRB.velocity.x > 0)
 		{
-			transform.localScale = new Vector3(1,1,1);
+			scale = new Vector3(1,1,1);
+			CmdflipScale ();
 		}
 		anim.SetFloat ("Speed", Mathf.Abs( theRB.velocity.x));
 		anim.SetBool ("Grounded", isGrounded);
@@ -85,7 +89,13 @@ public class PlayerController : NetworkBehaviour {
 	void CmdSnowBall()
 	{
 		GameObject ballClone = Instantiate(snowBall,throwPoint.position,throwPoint.rotation) as GameObject;
-		ballClone.transform.localScale = transform.localScale;
+		ballClone.transform.localScale = scale;
 		NetworkServer.Spawn (ballClone);
+	}
+
+	[Command]
+	void CmdflipScale()
+	{
+			transform.localScale = scale;
 	}
 }

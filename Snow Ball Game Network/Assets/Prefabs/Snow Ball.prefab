@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50457062699567256}
   - component: {fileID: 114273668602242342}
   - component: {fileID: 114794741387303384}
-  - component: {fileID: 114930729315860886}
+  - component: {fileID: 114458601671600676}
   m_Layer: 0
   m_Name: Snow Ball
   m_TagString: Untagged
@@ -94,6 +94,27 @@ MonoBehaviour:
   ballSpeed: 15
   snowBallEffect: {fileID: 1204159944141826, guid: bc90341cc4e102649bd81bfcada00f6b,
     type: 2}
+--- !u!114 &114458601671600676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1257486635139304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 2
+  m_SendInterval: 0.03846154
+  m_SyncRotationAxis: 3
+  m_RotationSyncCompression: 2
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114794741387303384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,27 +147,6 @@ MonoBehaviour:
     i15: 137
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &114930729315860886
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1257486635139304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 2
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 3
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!212 &212533162932173638
 SpriteRenderer:
   m_ObjectHideFlags: 1

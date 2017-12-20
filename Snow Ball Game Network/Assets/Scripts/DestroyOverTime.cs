@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class DestroyOverTime : MonoBehaviour {
+public class DestroyOverTime : NetworkBehaviour {
 
 	public float lifetime;
 
@@ -15,7 +16,9 @@ public class DestroyOverTime : MonoBehaviour {
 	void Update () {
 		lifetime -= Time.deltaTime;
 		if (lifetime < 0) {
-			Destroy (gameObject);
+			//if (!isServer)
+				//return;
+			NetworkServer.Destroy (gameObject);
 		}
 	}
 }

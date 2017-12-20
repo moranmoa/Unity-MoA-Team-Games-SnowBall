@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class SnowBall : MonoBehaviour {
+public class SnowBall : NetworkBehaviour {
 	
 	public float ballSpeed;
 
@@ -16,6 +17,7 @@ public class SnowBall : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+	[ServerCallback]
 	void Update () {
 
 		theRB.velocity = new Vector2 (ballSpeed * transform.localScale.x, 0);
@@ -23,16 +25,27 @@ public class SnowBall : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		CmdsnowBallEffect ();
+		NetworkServer.Destroy(gameObject);
+
+		if (!isServer)
+			return;
+		//Network.Destroy(snowBallEffect1);
 		if (other.tag == "Player1 Network") {
 			FindObjectOfType<GameManager> ().HurtP1 ();
 		}
 		if (other.tag == "Player2 Network") {
 			FindObjectOfType<GameManager> ().HurtP2 ();
 		}
-			
-
-		Instantiate (snowBallEffect, transform.position, transform.rotation);
-		Destroy(gameObject);
+	}
+	[Command]
+	void CmdsnowBallEffect()
+	{
+		//GameObject ballClone = Instantiate(snowBall,throwPoint.position,throwPoint.rotation) as GameObject;
+		//ballClone.transform.localScale = transform.localScale;
+		//NetworkServer.Spawn (ballClone);
+		GameObject snowBallEffect1 = Instantiate (snowBallEffect, transform.position, transform.rotation);
+		NetworkServer.Spawn (snowBallEffect1);
 	}
 
 }
