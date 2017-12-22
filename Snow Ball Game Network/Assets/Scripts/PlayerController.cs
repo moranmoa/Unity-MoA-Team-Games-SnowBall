@@ -33,6 +33,7 @@ public class PlayerController : NetworkBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		theRB = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator> ();
 		scale = new Vector3 (1, 1, 1);
@@ -40,57 +41,82 @@ public class PlayerController : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!isLocalPlayer)
-			return;
-		Vector2 moveVec = new Vector2 (CrossPlatformInputManager.GetAxis ("Horizontal"), CrossPlatformInputManager.GetAxis ("Vertical"));
-		bool isJumping = CrossPlatformInputManager.GetButtonDown ("Jump");
-		bool isFire = CrossPlatformInputManager.GetButtonDown ("Fire");
+		Vector2 moveVec;//= new Vector2 (CrossPlatformInputManager.GetAxis ("Horizontal"), CrossPlatformInputManager.GetAxis ("Vertical"));
+		bool isJumping; //= CrossPlatformInputManager.GetButtonDown ("Jump");
+		bool isFire ;//= CrossPlatformInputManager.GetButtonDown ("Fire");
 		isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatIsGround);
 
-		if (Input.GetKey(left)||moveVec.x<0)
-		{
-			theRB.velocity = new Vector2(-moveSpeed, theRB.velocity.y);
-		}else if (Input.GetKey(right)||moveVec.x>0)
-		{
-			theRB.velocity = new Vector2(moveSpeed, theRB.velocity.y);
-		}else
-		{
-			theRB.velocity = new Vector2(0, theRB.velocity.y);
-		}
-		if ((Input.GetKeyDown(jump)||isJumping) && isGrounded)
-		{
-			theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-		}
-		if (Input.GetKeyDown(throwBall)||isFire){
-			//GameObject ballClone = (GameObject) 
-			CmdSnowBall();
-				//Network.Instantiate(snowBall,throwPoint.position,throwPoint.rotation,0);
-			//ballClone.transform.localScale = transform.localScale;
 
-			anim.SetTrigger("Throw");
-			//throwSound.Play ();
+		if (isLocalPlayer) {
+			if (Input.GetKey (left)) {//||moveVec.x<0)
+				theRB.velocity = new Vector2 (-moveSpeed, theRB.velocity.y);
+				scale = new Vector3 (-1, 1, 1);
+			//	theRB.transform.localScale = scale;
+				Cmdscale(scale);
+			} else if (Input.GetKey (right)) {//||moveVec.x>0)
+				theRB.velocity = new Vector2 (moveSpeed, theRB.velocity.y);
+				scale = new Vector3 (1, 1, 1);
+				//theRB.transform.localScale = scale;//CmdflipScale ();
+				Cmdscale(scale);
+			} else {
+				theRB.velocity = new Vector2 (0, theRB.velocity.y);
+			}
+			if ((Input.GetKeyDown (jump)) && isGrounded) {//||isJumping
+				theRB.velocity = new Vector2 (theRB.velocity.x, jumpForce);
+			}
+			if (Input.GetKeyDown (throwBall)) {//||isFire)
+				//GameObject ballClone = (GameObject) 
+				/*if (theRB.velocity.x < 0) 
+				{
+					scale = new Vector3(-1,1,1);
+				}
+				else if(theRB.velocity.x > 0)
+				{
+					scale = new Vector3(1,1,1);
+				}*/
+				CmdSnowBall (scale);
+				//Network.Instantiate(snowBall,throwPoint.position,throwPoint.rotation,0);
+				//ballClone.transform.localScale = transform.localScale;
+					anim.SetTrigger ("Throw");
+				//throwSound.Play ();
+			}
 		}
-		if (theRB.velocity.x < 0) 
-		{
-			scale = new Vector3(-1,1,1);
-			CmdflipScale ();
+		/*
+		if (isLocalPlayer){
+			if (theRB.velocity.x < 0) 
+			{
+				scale = new Vector3(-1,1,1);
+				theRB.transform.localScale = scale;
+				//CmdflipScale ();
+			}
+			else if(theRB.velocity.x > 0)
+			{
+				scale = new Vector3(1,1,1);
+				theRB.transform.localScale = scale;//CmdflipScale ();
+			}
 		}
-		else if(theRB.velocity.x > 0)
-		{
-			scale = new Vector3(1,1,1);
-			CmdflipScale ();
-		}
+		*/
+		if (isLocalPlayer)
 		anim.SetFloat ("Speed", Mathf.Abs( theRB.velocity.x));
+		if (isLocalPlayer)
 		anim.SetBool ("Grounded", isGrounded);
 
 
 	}
 	[Command]
-	void CmdSnowBall()
+	void CmdSnowBall(Vector3 scale)
 	{
 		GameObject ballClone = Instantiate(snowBall,throwPoint.position,throwPoint.rotation) as GameObject;
-		ballClone.transform.localScale = scale;
+
 		NetworkServer.Spawn (ballClone);
+		Rpcballscale (scale, ballClone);
+	}
+	[ClientRpc]
+	void Rpcballscale(Vector3 scale,GameObject ballClone)
+	{
+		//if (isLocalPlayer)
+		//	return;
+		ballClone.transform.localScale = scale;;
 	}
 
 	[Command]
@@ -98,4 +124,19 @@ public class PlayerController : NetworkBehaviour {
 	{
 			transform.localScale = scale;
 	}
+
+	[Command]
+	void Cmdscale(Vector3 scale)
+	{
+		Rpcscale(scale);
+	}
+
+	[ClientRpc]
+	void Rpcscale(Vector3 scale)
+	{
+		//if (isLocalPlayer)
+		//	return;
+		theRB.transform.localScale=scale;
+	}
+
 }
