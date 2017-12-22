@@ -324,7 +324,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0, g: 0, b: 0, a: 0}
   name: 
-  pname: {fileID: 0}
 --- !u!114 &114592455864239206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -356,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 2
-  m_SendInterval: 0.0625
+  m_SendInterval: 0.09090909
   m_SyncRotationAxis: 3
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
