@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
 
-public class PlayerController : NetworkBehaviour {
+public class PlayerControllerNet : NetworkBehaviour {
 	[SyncVar]
 	public Vector3 scale;
 

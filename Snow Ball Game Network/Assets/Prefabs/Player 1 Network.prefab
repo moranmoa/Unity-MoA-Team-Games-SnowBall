@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 23184514442760558}
   - component: {fileID: 102614586047837520}
   m_Layer: 8
-  m_Name: New Text
+  m_Name: Player name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114102054722148920}
   - component: {fileID: 114592455864239206}
   - component: {fileID: 114938721811776152}
+  - component: {fileID: 114435228413630992}
   m_Layer: 8
   m_Name: Player 1 Network
   m_TagString: Player1
@@ -144,7 +145,7 @@ MeshRenderer:
   m_GameObject: {fileID: 1646118227398160}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -310,6 +311,20 @@ MonoBehaviour:
   snowBall: {fileID: 1257486635139304, guid: 3946c1dd8418ccd489b63f01e939b589, type: 2}
   throwPoint: {fileID: 4605161732884104}
   throwSound: {fileID: 0}
+--- !u!114 &114435228413630992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1795654312516202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ab6dd94c015a94f94a0bcdec39c865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
+  name: 
+  pname: {fileID: 0}
 --- !u!114 &114592455864239206
 MonoBehaviour:
   m_ObjectHideFlags: 1
