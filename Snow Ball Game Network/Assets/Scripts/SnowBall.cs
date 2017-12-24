@@ -28,15 +28,22 @@ public class SnowBall : NetworkBehaviour {
 		CmdsnowBallEffect ();
 		NetworkServer.Destroy(gameObject);
 
-		if (!isServer)
+		//if (!isServer)
+			//return;
+		if (other.gameObject.tag != "Player1")
 			return;
+		PlayetHealth health = other.gameObject.GetComponent<PlayetHealth> ();
+		if (health != null)
+			health.TakeDamage (1);
 		//Network.Destroy(snowBallEffect1);
+		/*
 		if (other.tag == "Player1 Network") {
 			FindObjectOfType<GameManager> ().HurtP1 ();
 		}
 		if (other.tag == "Player2 Network") {
 			FindObjectOfType<GameManager> ().HurtP2 ();
 		}
+		*/
 	}
 	[Command]
 	void CmdsnowBallEffect()

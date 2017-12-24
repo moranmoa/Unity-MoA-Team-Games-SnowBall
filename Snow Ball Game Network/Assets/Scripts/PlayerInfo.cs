@@ -22,7 +22,7 @@ public class PlayerInfo : NetworkBehaviour {
 		thetext = GetComponentInChildren<TextMesh>();
 		thetext.text = name;
 		theRB = GetComponent<Rigidbody2D>();
-		scale = new Vector3(0.5f,0.5f,0.5f);
+		scale = new Vector3(0.3f,0.3f,0.3f);
 		Cmdscale (scale);
 	}
 	
@@ -30,12 +30,12 @@ public class PlayerInfo : NetworkBehaviour {
 	void Update () {
 		if (theRB.velocity.x < 0) 
 				{
-			scale = new Vector3(-0.5f,0.5f,0.5f);
+			scale = new Vector3(-0.3f,0.3f,0.3f);
 					Cmdscale (scale);
 				}
 				else if(theRB.velocity.x > 0)
 				{
-			scale = new Vector3(0.5f,0.5f,0.5f);
+			scale = new Vector3(0.3f,0.3f,0.3f);
 					Cmdscale (scale);
 				}
 	}

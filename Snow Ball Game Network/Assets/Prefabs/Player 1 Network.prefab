@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 114592455864239206}
   - component: {fileID: 114938721811776152}
   - component: {fileID: 114435228413630992}
+  - component: {fileID: 114053370776417922}
   m_Layer: 8
   m_Name: Player 1 Network
   m_TagString: Player1
@@ -252,6 +253,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &114053370776417922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1795654312516202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03c55622eeaa5344a6f4ba4738e7050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  informationText: {fileID: 0}
 --- !u!114 &114102054722148920
 MonoBehaviour:
   m_ObjectHideFlags: 1
